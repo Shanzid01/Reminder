@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import '../styles/app.css';
 import Tab from './tab';
-import Cookie from '../helper/cookies'
+import Cookie from '../helper/cookies';
+import { HashRouter, Route, Link } from "react-router-dom";
 
 class App extends Component{
     constructor(props){
@@ -28,9 +29,13 @@ class App extends Component{
         }
     }
     componentWillMount(){
-        let allTasks=JSON.parse(Cookie.getCookie('allTasks'));
-        if(allTasks.length>0){
-            this.setState({tasks:allTasks});
+        try{
+            let allTasks=JSON.parse(Cookie.getCookie('allTasks'));
+            if(allTasks.length>0){
+                this.setState({tasks:allTasks});
+            }
+        }catch(e){
+            console.error("Error in loading pre-existing cookies", e);
         }
     }
     getAllTasks(){
@@ -50,6 +55,7 @@ class App extends Component{
     }
  render(){
     return(
+    <HashRouter basename='/'>
     <div className="container center">
         <div className="app-title">ReminderPro</div>
         <div className="row">
@@ -65,6 +71,7 @@ class App extends Component{
             </div>
         </div>
     </div>
+    </HashRouter>
  );}
 }
 export default App;
