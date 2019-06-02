@@ -1,0 +1,42 @@
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+.app-title{
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 10%;
+}
+.tab-details{
+    position: relative;
+    text-align: left;
+    padding:7px 14px 12px 14px;
+    margin: 10px auto 0px auto;
+    max-width:75%;
+    border: dotted 1px rgb(180, 180, 180);
+    background: white;
+    border-radius: 4px;
+    min-height: 50px;
+}
+.tab-name{
+    font-size: 21px;
+    text-transform: capitalize;
+}
+.tab-date, .tab-daysLeft{
+    color: rgb(75, 75, 75);
+}
+.tab-daysLeft{
+    margin-left: 5px;
+    font-size: 12px;
+}
+.clear-btn{
+    position: absolute;
+    top:5px;
+    right:5px;
+    font-size: 18px;
+    border-radius: 100%;
+    padding: 5px;
+}
+.clear-btn:hover{
+    color:red;
+}
